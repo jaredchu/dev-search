@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Developer's Search Assistant</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="app">
+    <!--Search form-->
+    <label>
+        Search:
+        <input v-on:keyup.enter="search" type="text" v-model="s">
+    </label>
+    <button v-on:click="search" type="button">Submit</button>
+    <!--END Search form-->
+
+    <hr>
+
+    <p>Search result of: <i>{{ searchText }}</i></p>
+
+    <hr>
+
+    <!--Search result area-->
+    <div id="search-result">
+        <div class="search-result-area">
+            <ul id="stackoverflow-result">
+                <li v-for="item in sofItems">
+                    <h4 class="item-title">
+                        <a target="_blank" v-bind:href="item.link">{{ item.title }}
+                        </a>
+                    </h4>
+                </li>
+            </ul>
+        </div>
+
+        <div class="search-result-area">
+        </div>
+
+        <div class="search-result-area">
+        </div>
+    </div>
+    <!--END Search result area-->
+</div>
+
+
+<script src="js/manifest.js"></script>
+<script src="js/vendor.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
