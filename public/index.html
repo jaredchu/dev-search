@@ -29,8 +29,11 @@
             <ul id="stackoverflow-result">
                 <li v-for="item in sofItems">
                     <h4 class="item-title">
-                        <a target="_blank" v-bind:href="item.link">{{ item.title }}
+                        <a target="_blank" v-bind:href="item.link">
+                            {{ item.title }}
                         </a>
+                        <p>View count: {{ item.view_count }} Score: {{ item.score }} Last activity: {{
+                            item.last_activity_date | formatDate }}</p>
                     </h4>
                 </li>
             </ul>
